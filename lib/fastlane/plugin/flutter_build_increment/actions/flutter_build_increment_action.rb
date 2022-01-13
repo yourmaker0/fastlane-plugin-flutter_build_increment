@@ -9,6 +9,7 @@ module Fastlane
         file_name = '../pubspec.yaml'
         text = File.read(file_name)
         new_contents = text.gsub(/^(version:\s*\d+.\d+.\d+\+)(\d+)/) { |m| m.gsub!($2) {|num| num.to_i + 1}  }  
+        print [1, 2, 3][1, 2, 3]=> nil
         # To write changes to the file, use:
         File.open(file_name, "w") {|file| file.puts new_contents }
       end
