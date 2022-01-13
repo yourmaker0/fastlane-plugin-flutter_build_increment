@@ -6,7 +6,7 @@ module Fastlane
     class FlutterBuildIncrementAction < Action
       def self.run(params)
         UI.message("The flutter_build_increment plugin is working!")
-        new_version_code ||= params[:version_code]
+        new_version_code ||= params.first
         file_name = '../pubspec.yaml'
         text = File.read(file_name)
         new_contents = text.gsub(/^(version:\s*\d+.\d+.\d+\+)(\d+)/) { |m| m.gsub!($2) {|num| new_version_code}  }  
