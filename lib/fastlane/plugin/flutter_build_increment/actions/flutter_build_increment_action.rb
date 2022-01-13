@@ -5,6 +5,7 @@ module Fastlane
   module Actions
     class FlutterBuildIncrementAction < Action
       def self.run(params)
+        version_code = "0"
         UI.message("The flutter_build_increment plugin is working!")
         new_version_code ||= params[:version_code]
         file_name = '../pubspec.yaml'
